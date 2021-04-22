@@ -5,7 +5,7 @@ export const addItemToCart2 = (cartItems, cartItemsToAdd) => {
         return cartItems.map(cartItem => 
             cartItem.id === cartItemsToAdd.id
             ? { ...cartItem, quantaty: cartItem.quantaty + 1 }
-            : { cartItem })
+            : { ...cartItem })
     }
 
     return [...cartItems, { ...cartItemsToAdd, quantaty: 1 }];
