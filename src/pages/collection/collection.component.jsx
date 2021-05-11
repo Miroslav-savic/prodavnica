@@ -7,6 +7,7 @@ import './collection.styles.scss';
 import CollectionItem from '../../components/collection-item/collection-item.components';
 
 const CollectionPage = ({ collection }) => {
+    console.log(collection);
     const { title, items } = collection;
     return (
         <div className='collection-page'>
@@ -21,10 +22,10 @@ const CollectionPage = ({ collection }) => {
 }
 
 const mapStoreToProps = (state, ownProps) => { 
-    console.log(ownProps);
+    
     return ({
-    collection: selectCollection(ownProps.match.params.collectionId)(state)
-})
+        collection: selectCollection(ownProps.match.params.collectionId)(state)
+    })
 }
 
 export default connect(mapStoreToProps)(CollectionPage);
